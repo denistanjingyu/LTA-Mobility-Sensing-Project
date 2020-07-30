@@ -109,33 +109,36 @@ Location information about commuter activities is vital for planning for travel 
 'learning_rate': 0.1, 'max_depth': -1, 'min_child_samples': 152, 'min_child_weight': 0.01, 'min_split_gain': 0.0,
 'n_estimators': 150, 'n_jobs': -1, 'num_leaves': 49, 'objective': 'binary', 'random_state': 0,
 'reg_alpha': 2, 'reg_lambda': 0, 'silent': True, 'subsample': 0.8711234237005314, 'subsample_for_bin': 200000, 'subsample_freq': 0}
-                  * Confusion Matrix Definition and Results
-                       
-                    | **Confusion Matrix Definition**                          |
+                  
+                  * Confusion Matrix Definition
+                
+                    |**Error**            |**Definition**                      |
                     |---------------------|------------------------------------|
                     | True Positives (TP) | Predicted Not MRT correctly        |
                     | True Negatives (TN) | Predicted MRT correctly            |
                     | False Positives (FP)| Predicted Not MRT but actual is MRT|
                     | False Negatives (FN)| Predicted MRT but actual is Not MRT|
-                   
-                    |**Confusion Matrix**        |
-                    |---------------------|------|
-                    | True Positives (TP) | 18986|
-                    | True Negatives (TN) | 752  |
-                    | False Positives (FP)| 377  |
-                    | False Negatives (FN)| 115  |
                     
-                   * The model optimizes recall instead of precision. In this case, recall can be thought as of a model’s ability to find all the data points of interest (MRT) in a dataset. A precision-recall tradeoff is common in many scenarios and it often boils down to the business problem that the company wants to solve or improve on.
+                  * Confusion Matrix Results
                    
-                    |**Final LightGBM with random search** |
-                    |---------|----------------------------|
-                    |**Classification performance metrics**|
-                    |Accuracy | 0.9778                     |
-                    |F1 Score | 0.9883                     |
-                    |Precision| 0.9812                     |
-                    |Recall   | 0.9956                     |
-                 
-              
+                    |**Error**            |**Values**|
+                    |---------------------|----------|
+                    | True Positives (TP) | 18986    |
+                    | True Negatives (TN) | 752      |
+                    | False Positives (FP)| 377      |
+                    | False Negatives (FN)| 115      |
+                    
+                  * The model optimizes recall instead of precision. In this case, recall can be thought as of a model’s ability to find all the data points of interest (MRT) in a dataset. A precision-recall tradeoff is common in many scenarios and it often boils down to the business problem that the company wants to solve or improve on.
+                   
+                  * Final LightGBM with random search
+                   
+                    |**Metrics**|**Score**|
+                    |-----------|---------|
+                    |Accuracy   | 0.9778  |
+                    |F1 Score   | 0.9883  |
+                    |Precision  | 0.9812  |
+                    |Recall     | 0.9956  |
+                   
 ## Code and Resources Used
 - **Database:** AWS S3
 - **Packages:** json, io, boto3, pandas, numpy, matplotlib, seaborn, datetime, sklearn, math, scipy, catboost, lightgbm, imblearn, hyperopt, xgboost, vecstack 
