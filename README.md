@@ -1,4 +1,7 @@
 # LTA Mobility Sensing Project for Land Transport Master Plan (LTMP) 2040
+
+![ltmp-public-consultation-document-banner](https://user-images.githubusercontent.com/45563371/88942744-41a1dc00-d2bd-11ea-980c-04ffdf18728c.jpg)
+
 ## Project Objective
 Location information about commuter activities is vital for planning for travel disruptions and infrastructural development. The Mobility Sensing Project aims to find innovative and novel ways to identify travel patterns from GPS data and other multi-sensory data collected in smartphones. This will be transformative to provide personalised travel information. 
 ## Project Outline
@@ -17,12 +20,30 @@ Location information about commuter activities is vital for planning for travel 
       ![image](https://user-images.githubusercontent.com/45563371/88942408-ce986580-d2bc-11ea-8c29-b346aa4e4de8.png)
       
       * Boxplots 
+      
+      ![image](https://user-images.githubusercontent.com/45563371/88942861-6433f500-d2bd-11ea-9d19-c0de9a460e49.png)
+      
       * Density Plots
+      
+      ![image](https://user-images.githubusercontent.com/45563371/88942983-84fc4a80-d2bd-11ea-9914-0f47744e73b1.png)
+
       * Pair plot
+      
+      ![image](https://user-images.githubusercontent.com/45563371/88943109-a78e6380-d2bd-11ea-9d24-0ec2b9a51aa5.png)
+
       * Aggregation Plots
           * Mean Plots
+          
+          ![image](https://user-images.githubusercontent.com/45563371/88943194-c12fab00-d2bd-11ea-91f4-0e37f64951c4.png)
+
           * Median Plots
+          
+          ![image](https://user-images.githubusercontent.com/45563371/88943249-d573a800-d2bd-11ea-8986-5c473d2e32c9.png)
+
       * Time Series Plots
+      
+      ![image](https://user-images.githubusercontent.com/45563371/88943384-f89e5780-d2bd-11ea-94c4-4f1131c94ee8.png)
+
    * Data Cleaning/Denoising
       * Kalman Filter
       
@@ -34,6 +55,36 @@ Location information about commuter activities is vital for planning for travel 
               * Subtract mean, divide standard deviation
               * Necessary to normalize data before performing PCA
           * General principle: any thing you learn, must be learned from the model's training data
+      * Apply Principal Component Analysis (PCA) on the scaled dataset
+          * Instead of choosing the number of components manually, we will be using the option that allows us to set the variance of the input that is supposed to be explained by the generated components.
+          * Typically, we want the explained variance to be between 95–99%. We will use 95% here.
+          * As usual to prevent data leakage, we fit PCA on the training data set, and then we transform the test data set using the already fitted pca.
+          * Cumulative Summation of the Explained Variance
+          
+          ![image](https://user-images.githubusercontent.com/45563371/88943791-80846180-d2be-11ea-9dff-0244cec7ee29.png)
+
+          * Most important feature of each principal component
+          
+          ![image](https://user-images.githubusercontent.com/45563371/88943958-b590b400-d2be-11ea-8cd5-ac5f91b63536.png)
+
+          * Number of times each sensor type appeared as the most important feature of a principal component
+          
+            |**Sensor Type**|**Count**|
+            |---------------|---------|
+            | Accelerometer | 15      |
+            | Gyroscope     | 21      |
+            | Magnetometer  | 12      |
+            
+           * Number of times each statistical type appeared as the most important feature of a principal component
+          
+            |**Statistical Type**|**Count**|
+            |--------------------|---------|
+            | Mean               | 5       |
+            | Variance           | 8       |
+            | Skewness           | 11      |
+            | Kurtosis           | 13      |
+            | Others             | 11      |
+            
    * Feature Extraction/Selection
       * Main idea: Transformation of patterns into features that are considered as a compressed representation
       * For each time series variable, key statistical features will be extracted to measure different properties of that variable
@@ -151,6 +202,24 @@ Location information about commuter activities is vital for planning for travel 
               * ADASYN works similarly to the regular SMOTE. However, the number of samples generated for each x_i is proportional to the number of samples which are not from the same class than x_i in a given neighborhood. Therefore, more samples will be generated in the area that the nearest neighbor rule is not respected.
            * Borderline-SMOTE: Over-Sampling Method in Imbalanced Data Sets
                * Only the minority examples near the borderline are over-sampled unliked the normal SMOTE and ADASYN.
+           * Original vs Upsample (SMOTE) Scatterplot
+               * Original data points
+               
+                 ![image](https://user-images.githubusercontent.com/45563371/88944787-bbd36000-d2bf-11ea-817a-d2b375c77f61.png)
+           
+               * Upsample (SMOTE) data points
+               
+                 ![image](https://user-images.githubusercontent.com/45563371/88944830-cee63000-d2bf-11ea-9f81-5bc1a1ec726d.png)
+                 
+           * Original vs Downsample Scatterplot
+               * Original data points
+               
+                 ![image](https://user-images.githubusercontent.com/45563371/88945128-300e0380-d2c0-11ea-958e-8a3d060968e5.png)
+           
+               * Downsample data points
+               
+                 ![image](https://user-images.githubusercontent.com/45563371/88945179-3ef4b600-d2c0-11ea-94aa-9c1b7c383882.png)
+           
       * LGBM using hyperopt with smote dataset
           * fmin - main function to minimize
           * tpe and anneal - optimization approaches
