@@ -21,6 +21,9 @@ Location information about commuter activities is vital for planning for travel 
       * Time Series Plots
    * Data Cleaning/Denoising
       * Kalman Filter
+      
+      ![image](https://user-images.githubusercontent.com/45563371/88941940-300c0480-d2bc-11ea-8d83-5f4718160e01.png)
+      
    * Data Preparation/Scaling
       * Standardization (Z-score Normalization)
           * Standardize the training set using the training set means and standard deviations to prevent data leakage
