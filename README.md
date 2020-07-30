@@ -164,12 +164,12 @@ Location information about commuter activities is vital for planning for travel 
               * In soft voting, every individual classifier provides a probability value that a specific data point belongs to a particular target class. The predictions are weighted by the classifier's importance and summed up. Then the target label with the greatest sum of weighted probabilities wins the vote.
               * Comparison of F1 Macro results
               
-                    |**Model**              |**Score**|
-                    |-----------------------|---------|
-                    |lgbm_hyperopt_final    | 0.9816  |
-                    |Random Forest          | 0.9788  |
-                    |Voting_Classifier_Hard | 0.9812  |
-                    |Voting_Classifier_Soft | 0.9824  |
+                |**Model**              |**Score**|
+                |-----------------------|---------|
+                |lgbm_hyperopt_final    | 0.9816  |
+                |Random Forest          | 0.9788  |
+                |Voting_Classifier_Hard | 0.9812  |
+                |Voting_Classifier_Soft | 0.9824  |
                     
               * The ensemble which used a soft voting system performed the best.
                   * False positive is quite high although overall result is good.
@@ -187,10 +187,7 @@ Location information about commuter activities is vital for planning for travel 
               * Use first level models to make predictions.
               * Fit the second level model on new S_train and same Y_train_smote.
               * Results are around the same as just the lgbm model alone. Probably due to the other models not being highly complementary.
-                  
                 
-                    
-                   
 ## Code and Resources Used
 - **Database:** AWS S3
 - **Packages:** json, io, boto3, pandas, numpy, matplotlib, seaborn, datetime, sklearn, math, scipy, catboost, lightgbm, imblearn, hyperopt, xgboost, vecstack 
