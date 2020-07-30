@@ -75,7 +75,7 @@ Location information about commuter activities is vital for planning for travel 
             | Gyroscope     | 21      |
             | Magnetometer  | 12      |
             
-           * Number of times each statistical type appeared as the most important feature of a principal component
+          * Number of times each statistical type appeared as the most important feature of a principal component
           
             |**Statistical Type**|**Count**|
             |--------------------|---------|
