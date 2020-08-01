@@ -44,7 +44,7 @@ Location information about commuter activities is vital for planning for travel 
       
       ![image](https://user-images.githubusercontent.com/45563371/88943384-f89e5780-d2bd-11ea-94c4-4f1131c94ee8.png)
 
-   * Data Cleaning/Denoising
+   * Data Denoising
       * Kalman Filter
       
       ![image](https://user-images.githubusercontent.com/45563371/88941940-300c0480-d2bc-11ea-8d83-5f4718160e01.png)
