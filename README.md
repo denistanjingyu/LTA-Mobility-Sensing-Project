@@ -46,6 +46,8 @@ Location information about commuter activities is vital for planning for travel 
 
    * Data Denoising
       * Kalman Filter
+          * Kalman filtering is an algorithm that provides estimates of some unknown variables given the measurements observed over time
+          * Kalman filter algorithm consists of two stages: prediction and update
       
       ![image](https://user-images.githubusercontent.com/45563371/88941940-300c0480-d2bc-11ea-8d83-5f4718160e01.png)
       
