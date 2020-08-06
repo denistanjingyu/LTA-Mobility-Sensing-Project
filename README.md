@@ -232,6 +232,9 @@ Location information about commuter activities is vital for planning for travel 
               * Results are slightly better than using random search
               * False positives are higher by an insignificant amount
       * Ensemble learning using heterogeneous algorithms
+      
+      ![ensemble-framework-packt](https://user-images.githubusercontent.com/45563371/89557512-82619e00-d845-11ea-81c0-4895fe38b692.jpg)
+
           * Ensemble methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.
           * Test out the ensemble using different base algorithms.
           * Ensemble 1
