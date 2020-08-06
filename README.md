@@ -100,7 +100,7 @@ Location information about commuter activities is vital for planning for travel 
             | Kurtosis           | 13      |
             | Others             | 11      |
             
-   * Feature Extraction/Selection
+   * Feature Extraction
       * Main idea: Transformation of patterns into features that are considered as a compressed representation
       * For each time series variable, key statistical features will be extracted to measure different properties of that variable
       * Main groups of the calculated statistical measures (Non-exhaustive):
@@ -115,12 +115,18 @@ Location information about commuter activities is vital for planning for travel 
           * The formula for the magnitude of a vector can be generalized to arbitrary dimensions. For example, if a = (a1,a2,a3,a4) is a four-dimensional vector, the formula for its magnitude is ∥a∥ = √a21+a22+a23+a24.
    * Classifier Training/Tuning/Evaluation (Before and after upsampling/downsampling techniques)
       * Train-Test Split
+      
+        ![1-16](https://user-images.githubusercontent.com/45563371/89560652-f56d1380-d849-11ea-9a20-b2ae24440562.png)
+
           * Perform a 70/30 train test split with stratification to ensure balanced Y distribution in both train and test sets
           * Set seed for reproducible results
           * To minimize data leakage when developing predictive models:
               * Perform data preparation within training set
               * Hold back a test set for final sanity check of the developed models
        * Trial Modeling Stage
+       
+         ![howtochooseamodel](https://user-images.githubusercontent.com/45563371/89560772-22212b00-d84a-11ea-8836-296e4b592754.jpg)
+
           * Before proceeding with PCA, build a few common classifiers using sklearn first. This allows us to compare the results before and after using PCA.
           * Perform cross validation on the training set to use less training time
           * Results might not be as good with less data but that doesn't matter for now as it is more about gaining insights into as many models as possible first.
@@ -159,10 +165,19 @@ Location information about commuter activities is vital for planning for travel 
                   
           * Boosting Algorithms tried
               * AdaBoost (Adaptive Boosting)
+              
+                ![1_kPazgmGTBHDMb8kVwesxbg](https://user-images.githubusercontent.com/45563371/89560942-63193f80-d84a-11ea-9d14-dd9fd536f66f.png)
+
               * CatBoost
+              
+                ![orig](https://user-images.githubusercontent.com/45563371/89561214-c3a87c80-d84a-11ea-917c-514d47af5bc4.png)
+
                   * Hyper-parameter tuning is seldom needed when using CatBoost.
                   * CatBoost which is implemented by powerful theories like ordered Boosting, Random permutations, makes sure that we are not overfitting our model. It also implements symmetric trees which eliminates parameters like (min_child_leafs). We can further tune with parameters like learning_rate, random_strength, L2_regulariser, but the results usually doesn’t vary much.
               * Light GBM
+              
+                ![Screenshot-from-2019-03-27-23-09-47-1](https://user-images.githubusercontent.com/45563371/89561372-fb172900-d84a-11ea-8127-5e1c06c69044.png)
+
                   * Gradient boosting framework that uses tree based learning algorithms
                   * Designed to be distributed and efficient with the following advantages:
                       * Faster training speed and higher efficiency
