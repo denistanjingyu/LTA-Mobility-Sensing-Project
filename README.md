@@ -260,8 +260,8 @@ Location information about commuter activities is vital for planning for travel 
               * Adding KNeighborsClassifier to the ensemble reduced false positives only by a little bit while false negatives close to doubled.
           * Creating a Stacking ensemble
           
-          ![An-example-scheme-of-stacking-ensemble-learning](https://user-images.githubusercontent.com/45563371/89557165-fbacc100-d844-11ea-8449-1daf9ff07e8c.png)
-
+            ![An-example-scheme-of-stacking-ensemble-learning](https://user-images.githubusercontent.com/45563371/89557165-fbacc100-d844-11ea-8449-1daf9ff07e8c.png)
+          
               * The main idea behind the structure of a stacked generalization is to use one or more first level models, make predictions using these models and then use these predictions as features to fit one or more second level models on top. To avoid overfitting, cross-validation is usually used to predict the OOF (out-of-fold) part of the training set.
               * Train a normal xgboost first.
               * Define first level models. We will use light gbm, random forest and K-Nearest Neighbour.
