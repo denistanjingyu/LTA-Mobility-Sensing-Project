@@ -11,6 +11,8 @@ Location information about commuter activities is vital for planning for travel 
 
 - Retrieve data from AWS S3 bucket
 - Download to local machine as csv file
+- Assisted in data collection through mobility sensing application (trial) created by LTA's software engineer
+
 ### Part 2
 
 ![Datasheet-pic-tindie2](https://user-images.githubusercontent.com/45563371/89558691-1c761600-d847-11ea-853f-b54cb28b0b3e.png)
@@ -19,8 +21,10 @@ Location information about commuter activities is vital for planning for travel 
 - Perform initial cleaning phase such as removing duplicates and converting epoch to date and time
 - Selected raw features: Accelerometer, Gyroscope, Magnetometer
   - Barometer (Not all users have baraometer sensor in their phones)
-  - GPS (Use too much battery power and sampled at vastly different frequency)
-  - Light, 
+  - GPS Location (Use too much battery power and sampled at vastly different frequency)
+  - Light sensor (Not useful based on previous literature, affected when mobile in bag or pants etc.)
+  - Pedometer (Only for walking, unable to differentiate once on different vechicles)
+  
 ### Part 3
 - Statistical Feature-Based Approach
    * Data Exploration
