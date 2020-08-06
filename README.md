@@ -6,9 +6,15 @@
 Location information about commuter activities is vital for planning for travel disruptions and infrastructural development. The Mobility Sensing Project aims to find innovative and novel ways to identify travel patterns from GPS data and other multi-sensory data collected in smartphones. This will be transformative to provide personalised travel information. 
 ## Project Outline
 ### Part 1
+
+![1_aNSe9ZERfX5-Dl0wAVBOOg](https://user-images.githubusercontent.com/45563371/89557738-dc626380-d845-11ea-9d41-10412ca6548e.png)
+
 - Retrieve data from AWS S3 bucket
 - Download to local machine as csv file
 ### Part 2
+
+![Datasheet-pic-tindie2](https://user-images.githubusercontent.com/45563371/89558691-1c761600-d847-11ea-853f-b54cb28b0b3e.png)
+
 - Load and merge 3 files into Python
 - Perform initial cleaning phase such as removing duplicates and converting epoch to date and time
 - Selected raw features: Accelerometer, Gyroscope, Magnetometer
@@ -233,7 +239,7 @@ Location information about commuter activities is vital for planning for travel 
               * False positives are higher by an insignificant amount
       * Ensemble learning using heterogeneous algorithms
       
-      ![ensemble-framework-packt](https://user-images.githubusercontent.com/45563371/89557512-82619e00-d845-11ea-81c0-4895fe38b692.jpg)
+        ![ensemble-framework-packt](https://user-images.githubusercontent.com/45563371/89557512-82619e00-d845-11ea-81c0-4895fe38b692.jpg)
 
           * Ensemble methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.
           * Test out the ensemble using different base algorithms.
