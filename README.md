@@ -18,6 +18,9 @@ Location information about commuter activities is vital for planning for travel 
 - Load and merge 3 files into Python
 - Perform initial cleaning phase such as removing duplicates and converting epoch to date and time
 - Selected raw features: Accelerometer, Gyroscope, Magnetometer
+  - Barometer (Not all users have baraometer sensor in their phones)
+  - GPS (Use too much battery power and sampled at vastly different frequency)
+  - Light, 
 ### Part 3
 - Statistical Feature-Based Approach
    * Data Exploration
