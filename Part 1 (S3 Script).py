@@ -1,4 +1,4 @@
-#Part 1 MSP
+# Part 1 MSP
 # Retrieve data from S3 bucket
 # Save to csv file
 import boto3
