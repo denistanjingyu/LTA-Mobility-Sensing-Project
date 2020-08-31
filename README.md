@@ -7,8 +7,8 @@ Table of Contents
 - [Project Objective](#project-objective)
 - [Project Outline](#project-outline)
     - [Part 1 (Data Retrieval)](#part-1)
-    - [Part 2 (Data Loading, Merging, Cleaning, Selection](#part-2)
-    - [Part 3 (Statistical Feature-Based Approach Data Modeling](#part-3)
+    - [Part 2 (Data Loading, Merging, Cleaning, Selection)](#part-2)
+    - [Part 3 (Statistical Feature-Based Approach Data Modeling)](#part-3)
 - [Code and Resources Used](#code-and-resources-used)
 
 ## Project Objective
