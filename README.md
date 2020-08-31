@@ -2,7 +2,7 @@
 
 ![ltmp-public-consultation-document-banner](https://user-images.githubusercontent.com/45563371/88942744-41a1dc00-d2bd-11ea-980c-04ffdf18728c.jpg)
 
-Table of Contents
+Table of Contents :bookmark_tabs:
 =================
 - [Project Objective](#project-objective)
 - [Project Outline](#project-outline)
