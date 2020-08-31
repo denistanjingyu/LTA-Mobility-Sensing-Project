@@ -2,6 +2,15 @@
 
 ![ltmp-public-consultation-document-banner](https://user-images.githubusercontent.com/45563371/88942744-41a1dc00-d2bd-11ea-980c-04ffdf18728c.jpg)
 
+Table of Contents
+=================
+- [Project Objective](#project-objective)
+- [Project Outline](#project-outline)
+    - [Part 1 (Data Retrieval)](#part-1)
+    - [Part 2 (Data Loading, Merging, Cleaning, Selection](#part-2)
+    - [Part 3 (Statistical Feature-Based Approach Data Modeling](#part-3)
+- [Code and Resources Used](#code-and-resources-used)
+
 ## Project Objective
 Location information about commuter activities is vital for planning for travel disruptions and infrastructural development. The Mobility Sensing Project aims to find innovative and novel ways to identify travel patterns from GPS data and other multi-sensory data collected in smartphones. This will be transformative to provide personalised travel information. 
 ## Project Outline
