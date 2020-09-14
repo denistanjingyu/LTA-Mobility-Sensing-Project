@@ -36,7 +36,7 @@ Location information about commuter activities is vital for planning for travel 
   
 ### Part 3
 #### Statistical Feature-Based Approach
-   * Data Exploration
+##### Data Exploration
       * Countplot
       
       ![image](https://user-images.githubusercontent.com/45563371/88942408-ce986580-d2bc-11ea-8c29-b346aa4e4de8.png)
@@ -66,14 +66,14 @@ Location information about commuter activities is vital for planning for travel 
       
       ![image](https://user-images.githubusercontent.com/45563371/88943384-f89e5780-d2bd-11ea-94c4-4f1131c94ee8.png)
 
-   * Data Denoising
+##### Data Denoising
       * Kalman Filter
           * Kalman filtering is an algorithm that provides estimates of some unknown variables given the measurements observed over time
           * Kalman filter algorithm consists of two stages: prediction and update
       
       ![image](https://user-images.githubusercontent.com/45563371/88941940-300c0480-d2bc-11ea-8d83-5f4718160e01.png)
       
-   * Data Preparation/Scaling
+##### Data Preparation/Scaling
       * Standardization (Z-score Normalization)
           * Standardize the training set using the training set means and standard deviations to prevent data leakage
               * Subtract mean, divide standard deviation
@@ -109,7 +109,7 @@ Location information about commuter activities is vital for planning for travel 
             | Kurtosis           | 13      |
             | Others             | 11      |
             
-   * Feature Extraction
+##### Feature Extraction
       * Main idea: Transformation of patterns into features that are considered as a compressed representation
       * For each time series variable, key statistical features will be extracted to measure different properties of that variable
       * Main groups of the calculated statistical measures (Non-exhaustive):
@@ -122,7 +122,7 @@ Location information about commuter activities is vital for planning for travel 
       * Determine a moving window size to calculate the above features (An initial size of window 10 is chosen based on literature)
       * Before extracting the features, a magnitude vector is calculated from each sensor to obtain 3 extra data sources
           * The formula for the magnitude of a vector can be generalized to arbitrary dimensions. For example, if a = (a1,a2,a3,a4) is a four-dimensional vector, the formula for its magnitude is ∥a∥ = √a21+a22+a23+a24.
-   * Classifier Training/Tuning/Evaluation (Before and after upsampling/downsampling techniques)
+##### Classifier Training/Tuning/Evaluation (Before and after upsampling/downsampling techniques)
       * Train-Test Split
       
         ![1-16](https://user-images.githubusercontent.com/45563371/89560652-f56d1380-d849-11ea-9a20-b2ae24440562.png)
