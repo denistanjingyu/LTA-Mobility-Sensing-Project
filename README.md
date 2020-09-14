@@ -37,49 +37,49 @@ Location information about commuter activities is vital for planning for travel 
 ### Part 3
 #### Statistical Feature-Based Approach
 ##### Data Exploration
-      * Countplot
+* Countplot
       
-      ![image](https://user-images.githubusercontent.com/45563371/88942408-ce986580-d2bc-11ea-8c29-b346aa4e4de8.png)
+  ![image](https://user-images.githubusercontent.com/45563371/88942408-ce986580-d2bc-11ea-8c29-b346aa4e4de8.png)
       
-      * Boxplots 
+* Boxplots 
       
-      ![image](https://user-images.githubusercontent.com/45563371/88942861-6433f500-d2bd-11ea-9d19-c0de9a460e49.png)
+  ![image](https://user-images.githubusercontent.com/45563371/88942861-6433f500-d2bd-11ea-9d19-c0de9a460e49.png)
       
-      * Density Plots
+* Density Plots
       
-      ![image](https://user-images.githubusercontent.com/45563371/88942983-84fc4a80-d2bd-11ea-9914-0f47744e73b1.png)
+  ![image](https://user-images.githubusercontent.com/45563371/88942983-84fc4a80-d2bd-11ea-9914-0f47744e73b1.png)
 
-      * Pair plot
+* Pair plot
       
-      ![image](https://user-images.githubusercontent.com/45563371/88943109-a78e6380-d2bd-11ea-9d24-0ec2b9a51aa5.png)
+  ![image](https://user-images.githubusercontent.com/45563371/88943109-a78e6380-d2bd-11ea-9d24-0ec2b9a51aa5.png)
 
-      * Aggregation Plots
-          * Mean Plots
+* Aggregation Plots
+    * Mean Plots
           
-          ![image](https://user-images.githubusercontent.com/45563371/88943194-c12fab00-d2bd-11ea-91f4-0e37f64951c4.png)
+      ![image](https://user-images.githubusercontent.com/45563371/88943194-c12fab00-d2bd-11ea-91f4-0e37f64951c4.png)
 
-          * Median Plots
+    * Median Plots
           
-          ![image](https://user-images.githubusercontent.com/45563371/88943249-d573a800-d2bd-11ea-8986-5c473d2e32c9.png)
+      ![image](https://user-images.githubusercontent.com/45563371/88943249-d573a800-d2bd-11ea-8986-5c473d2e32c9.png)
 
-      * Time Series Plots
+    * Time Series Plots
       
       ![image](https://user-images.githubusercontent.com/45563371/88943384-f89e5780-d2bd-11ea-94c4-4f1131c94ee8.png)
 
 ##### Data Denoising
-      * Kalman Filter
-          * Kalman filtering is an algorithm that provides estimates of some unknown variables given the measurements observed over time
-          * Kalman filter algorithm consists of two stages: prediction and update
+* Kalman Filter
+    * Kalman filtering is an algorithm that provides estimates of some unknown variables given the measurements observed over time
+    * Kalman filter algorithm consists of two stages: prediction and update
       
       ![image](https://user-images.githubusercontent.com/45563371/88941940-300c0480-d2bc-11ea-8d83-5f4718160e01.png)
       
 ##### Data Preparation/Scaling
-      * Standardization (Z-score Normalization)
-          * Standardize the training set using the training set means and standard deviations to prevent data leakage
-              * Subtract mean, divide standard deviation
-              * Necessary to normalize data before performing PCA
-          * General principle: any thing you learn, must be learned from the model's training data
-      * Apply Principal Component Analysis (PCA) on the scaled dataset
+* Standardization (Z-score Normalization)
+    * Standardize the training set using the training set means and standard deviations to prevent data leakage
+        * Subtract mean, divide standard deviation
+        * Necessary to normalize data before performing PCA
+        * General principle: any thing you learn, must be learned from the model's training data
+* Apply Principal Component Analysis (PCA) on the scaled dataset
           * Instead of choosing the number of components manually, we will be using the option that allows us to set the variance of the input that is supposed to be explained by the generated components.
           * Typically, we want the explained variance to be between 95–99%. We will use 95% here.
           * As usual to prevent data leakage, we fit PCA on the training data set, and then we transform the test data set using the already fitted pca.
