@@ -228,87 +228,87 @@ Location information about commuter activities is vital for planning for travel 
                     
                 * The model optimizes recall instead of precision. In this case, recall can be thought as of a model’s ability to find all the data points of interest (MRT) in a dataset. A precision-recall tradeoff is common in many scenarios and it often boils down to the business problem that the company wants to solve or improve on.
                    
-                * Final LightGBM with random search
+            * Final LightGBM with random search
                    
-                  |**Metrics**|**Score**|
-                  |-----------|---------|
-                  |Accuracy   | 0.9778  |
-                  |F1 Score   | 0.9883  |
-                  |Precision  | 0.9812  |
-                  |Recall     | 0.9956  |
+              |**Metrics**|**Score**|
+              |-----------|---------|
+              |Accuracy   | 0.9778  |
+              |F1 Score   | 0.9883  |
+              |Precision  | 0.9812  |
+              |Recall     | 0.9956  |
                     
-      * Experimentation with oversampling and undersampling techniques
-          * ADASYN: Adaptive Synthetic Sampling Method for Imbalanced Data
-              * ADASYN works similarly to the regular SMOTE. However, the number of samples generated for each x_i is proportional to the number of samples which are not from the same class than x_i in a given neighborhood. Therefore, more samples will be generated in the area that the nearest neighbor rule is not respected.
-           * Borderline-SMOTE: Over-Sampling Method in Imbalanced Data Sets
-               * Only the minority examples near the borderline are over-sampled unliked the normal SMOTE and ADASYN.
-           * Original vs Upsample (SMOTE) Scatterplot
-               * Original data points
+* Experimentation with oversampling and undersampling techniques
+    * ADASYN: Adaptive Synthetic Sampling Method for Imbalanced Data
+        * ADASYN works similarly to the regular SMOTE. However, the number of samples generated for each x_i is proportional to the number of samples which are not from the same class than x_i in a given neighborhood. Therefore, more samples will be generated in the area that the nearest neighbor rule is not respected.
+    * Borderline-SMOTE: Over-Sampling Method in Imbalanced Data Sets
+        * Only the minority examples near the borderline are over-sampled unliked the normal SMOTE and ADASYN.
+    * Original vs Upsample (SMOTE) Scatterplot
+        * Original data points
                
-                 ![image](https://user-images.githubusercontent.com/45563371/88944787-bbd36000-d2bf-11ea-817a-d2b375c77f61.png)
+          ![image](https://user-images.githubusercontent.com/45563371/88944787-bbd36000-d2bf-11ea-817a-d2b375c77f61.png)
            
-               * Upsample (SMOTE) data points
+        * Upsample (SMOTE) data points
                
-                 ![image](https://user-images.githubusercontent.com/45563371/88944830-cee63000-d2bf-11ea-9f81-5bc1a1ec726d.png)
+          ![image](https://user-images.githubusercontent.com/45563371/88944830-cee63000-d2bf-11ea-9f81-5bc1a1ec726d.png)
                  
-           * Original vs Downsample Scatterplot
-               * Original data points
+    * Original vs Downsample Scatterplot
+        * Original data points
                
-                 ![image](https://user-images.githubusercontent.com/45563371/88945128-300e0380-d2c0-11ea-958e-8a3d060968e5.png)
+          ![image](https://user-images.githubusercontent.com/45563371/88945128-300e0380-d2c0-11ea-958e-8a3d060968e5.png)
            
-               * Downsample data points
+        * Downsample data points
                
-                 ![image](https://user-images.githubusercontent.com/45563371/88945179-3ef4b600-d2c0-11ea-94aa-9c1b7c383882.png)
+          ![image](https://user-images.githubusercontent.com/45563371/88945179-3ef4b600-d2c0-11ea-94aa-9c1b7c383882.png)
            
-      * LGBM using hyperopt with smote dataset
-          * fmin - main function to minimize
-          * tpe and anneal - optimization approaches
-              * TPE (Tree-structured Parzen Estimator) is a default algorithm for the Hyperopt. It uses Bayesian approach for optimization. At every step it is trying to build probabilistic model of the function and choose the most promising parameters for the next step.
-          * hp - include different distributions of variables
-          * Trials - used for logging
-          * Insights:
-              * Results are slightly better than using random search
-              * False positives are higher by an insignificant amount
-      * Ensemble learning using heterogeneous algorithms
+    * LGBM using hyperopt with smote dataset
+        * fmin - main function to minimize
+        * tpe and anneal - optimization approaches
+            * TPE (Tree-structured Parzen Estimator) is a default algorithm for the Hyperopt. It uses Bayesian approach for optimization. At every step it is trying to build probabilistic model of the function and choose the most promising parameters for the next step.
+        * hp - include different distributions of variables
+        * Trials - used for logging
+        * Insights:
+            * Results are slightly better than using random search
+            * False positives are higher by an insignificant amount
+* Ensemble learning using heterogeneous algorithms
       
-        ![ensemble-framework-packt](https://user-images.githubusercontent.com/45563371/89557512-82619e00-d845-11ea-81c0-4895fe38b692.jpg)
+  ![ensemble-framework-packt](https://user-images.githubusercontent.com/45563371/89557512-82619e00-d845-11ea-81c0-4895fe38b692.jpg)
 
-          * Ensemble methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.
-          * Test out the ensemble using different base algorithms.
-          * Ensemble 1
-              * Final LightGBM with SMOTE borderline and bayes optimisation (hyperopt)
-              * Random Forest
-          * Ensemble vote methods
-              * In hard voting (also known as majority voting), every individual classifier votes for a class, and the majority wins. In statistical terms, the predicted target label of the ensemble is the mode of the distribution of individually predicted labels.
-              * In soft voting, every individual classifier provides a probability value that a specific data point belongs to a particular target class. The predictions are weighted by the classifier's importance and summed up. Then the target label with the greatest sum of weighted probabilities wins the vote.
-              * Comparison of F1 Macro results
+    * Ensemble methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.
+    * Test out the ensemble using different base algorithms.
+    * Ensemble 1
+        * Final LightGBM with SMOTE borderline and bayes optimisation (hyperopt)
+        * Random Forest
+    * Ensemble vote methods
+        * In hard voting (also known as majority voting), every individual classifier votes for a class, and the majority wins. In statistical terms, the predicted target label of the ensemble is the mode of the distribution of individually predicted labels.
+        * In soft voting, every individual classifier provides a probability value that a specific data point belongs to a particular target class. The predictions are weighted by the classifier's importance and summed up. Then the target label with the greatest sum of weighted probabilities wins the vote.
+        * Comparison of F1 Macro results
               
-                |**Model**              |**Score**|
-                |-----------------------|---------|
-                |lgbm_hyperopt_final    | 0.9816  |
-                |Random Forest          | 0.9788  |
-                |Voting_Classifier_Hard | 0.9812  |
-                |Voting_Classifier_Soft | 0.9824  |
+          |**Model**              |**Score**|
+          |-----------------------|---------|
+          |lgbm_hyperopt_final    | 0.9816  |
+          |Random Forest          | 0.9788  |
+          |Voting_Classifier_Hard | 0.9812  |
+          |Voting_Classifier_Soft | 0.9824  |
                     
-              * The ensemble which used a soft voting system performed the best.
-                  * False positive is quite high although overall result is good.
-          * Ensemble 2 (Attempt to combine low correlation models to get higher precision score)
-              * Final LightGBM with SMOTE borderline and bayes optimisation (hyperopt)
-              * Random Forest
-              * K-Nearest Neighbour
-          * Only hard voting since k_nearest neighbour does not output any probabilities.
-          * Insight:
-              * Adding KNeighborsClassifier to the ensemble reduced false positives only by a little bit while false negatives close to doubled.
-          * Creating a Stacking ensemble
+        * The ensemble which used a soft voting system performed the best.
+        * False positive is quite high although overall result is good.
+    * Ensemble 2 (Attempt to combine low correlation models to get higher precision score)
+        * Final LightGBM with SMOTE borderline and bayes optimisation (hyperopt)
+        * Random Forest
+        * K-Nearest Neighbour
+            * Only hard voting since k_nearest neighbour does not output any probabilities.
+            * Insight:
+                * Adding KNeighborsClassifier to the ensemble reduced false positives only by a little bit while false negatives close to doubled.
+* Creating a Stacking ensemble
           
-            ![An-example-scheme-of-stacking-ensemble-learning](https://user-images.githubusercontent.com/45563371/89557165-fbacc100-d844-11ea-8449-1daf9ff07e8c.png)
+  ![An-example-scheme-of-stacking-ensemble-learning](https://user-images.githubusercontent.com/45563371/89557165-fbacc100-d844-11ea-8449-1daf9ff07e8c.png)
           
-              * The main idea behind the structure of a stacked generalization is to use one or more first level models, make predictions using these models and then use these predictions as features to fit one or more second level models on top. To avoid overfitting, cross-validation is usually used to predict the OOF (out-of-fold) part of the training set.
-              * Train a normal xgboost first.
-              * Define first level models. We will use light gbm, random forest and K-Nearest Neighbour.
-              * Use first level models to make predictions.
-              * Fit the second level model on new S_train and same Y_train_smote.
-              * Results are around the same as just the lgbm model alone. Probably due to the other models not being highly complementary.
+  * The main idea behind the structure of a stacked generalization is to use one or more first level models, make predictions using these models and then use these predictions as features to fit one or more second level models on top. To avoid overfitting, cross-validation is usually used to predict the OOF (out-of-fold) part of the training set.
+  * Train a normal xgboost first.
+  * Define first level models. We will use light gbm, random forest and K-Nearest Neighbour.
+  * Use first level models to make predictions.
+  * Fit the second level model on new S_train and same Y_train_smote.
+  * Results are around the same as just the lgbm model alone. Probably due to the other models not being highly complementary.
                 
 ## Code and Resources Used
 - **Database:** AWS S3
