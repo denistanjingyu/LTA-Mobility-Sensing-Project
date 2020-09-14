@@ -35,7 +35,7 @@ Location information about commuter activities is vital for planning for travel 
   - Pedometer (Only for walking, unable to differentiate once on different vechicles)
   
 ### Part 3
-- Statistical Feature-Based Approach
+#### Statistical Feature-Based Approach
    * Data Exploration
       * Countplot
       
