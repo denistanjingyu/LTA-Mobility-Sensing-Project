@@ -69,7 +69,12 @@ df_gyro.to_csv('gyroscope.csv', index = False)
 # Read in magnetometer sensor data
 # Check the shape
 # Save as csv
-df_magneto = pd.DataFrame(columns = ['Altitude', 'JourneyID', 'lat', 'lng', 'Mode', 'Timestamp'])
+df_magneto = pd.DataFrame(columns = ['Altitude', 
+                                     'JourneyID', 
+                                     'lat', 
+                                     'lng', 
+                                     'Mode', 
+                                     'Timestamp'])
 for obj in prefix_objs:
     key = obj.key
     obje = client.get_object(Bucket='', Key=key)
