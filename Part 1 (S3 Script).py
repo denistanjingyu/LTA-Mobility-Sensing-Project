@@ -6,11 +6,14 @@ import boto3
 _BUCKET_NAME = ''
 _PREFIX = ''
 
-client = boto3.client('s3', aws_access_key_id = '', aws_secret_access_key = '')
+client = boto3.client('s3', 
+                      aws_access_key_id = '', 
+                      aws_secret_access_key = '')
 
 def ListFiles(client):
     """List files in specific S3 URL"""
-    response = client.list_objects(Bucket = _BUCKET_NAME, Prefix = _PREFIX)
+    response = client.list_objects(Bucket = _BUCKET_NAME, 
+                                   Prefix = _PREFIX)
     for content in response.get('Contents', []):
         yield content.get('Key')
 
@@ -19,7 +22,9 @@ for file in file_list:
     print ('File found: %s' % file)
     
 # Accessing s3 bucket data
-s3 = boto3.resource('s3', aws_access_key_id = '',aws_secret_access_key = '')
+s3 = boto3.resource('s3', 
+                    aws_access_key_id = '',
+                    aws_secret_access_key = '')
 import json
 import pandas as pd
 import boto3
@@ -30,10 +35,16 @@ prefix_objs = bucket.objects.filter(Prefix = "")
 # Read in accelerometer sensor data
 # Check the shape
 # Save as csv
-df_accel = pd.DataFrame(columns = ['Altitude', 'JourneyID', 'lat', 'lng', 'Mode', 'Timestamp'])
+df_accel = pd.DataFrame(columns = ['Altitude', 
+                                   'JourneyID', 
+                                   'lat', 
+                                   'lng', 
+                                   'Mode', 
+                                   'Timestamp'])
 for obj in prefix_objs:
     key = obj.key
-    obje = client.get_object(Bucket = '', Key = key)
+    obje = client.get_object(Bucket = '', 
+                             Key = key)
     data = obje['Body'].read().decode()
     json_content = json.loads(data)
     try:
@@ -45,14 +56,16 @@ for obj in prefix_objs:
     
 df_accel.shape
 df_accel.head()
-df_accel.to_csv('accelerometer.csv', index = False)
+df_accel.to_csv('accelerometer.csv', 
+                index = False)
 
 # Read in gyroscope sensor data
 # Check the shape
 # Save as csv
 for obj in prefix_objs:
     key = obj.key
-    obje = client.get_object(Bucket = '', Key = key)
+    obje = client.get_object(Bucket = '', 
+                             Key = key)
     data = obje['Body'].read().decode()
     json_content = json.loads(data)
     try:
@@ -64,7 +77,8 @@ for obj in prefix_objs:
 
 df_gyro.shape
 df_gyro.head()
-df_gyro.to_csv('gyroscope.csv', index = False)
+df_gyro.to_csv('gyroscope.csv',
+               index = False)
 
 # Read in magnetometer sensor data
 # Check the shape
@@ -77,7 +91,8 @@ df_magneto = pd.DataFrame(columns = ['Altitude',
                                      'Timestamp'])
 for obj in prefix_objs:
     key = obj.key
-    obje = client.get_object(Bucket='', Key=key)
+    obje = client.get_object(Bucket = '', 
+                             Key=key)
     data = obje['Body'].read().decode()
     json_content = json.loads(data)
     try:
@@ -89,4 +104,5 @@ for obj in prefix_objs:
     
 df_magneto.shape
 df_magneto.head()
-df_magneto.to_csv('magnetometer.csv', index = False)
+df_magneto.to_csv('magnetometer.csv', 
+                  index = False)
