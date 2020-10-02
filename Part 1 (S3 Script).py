@@ -28,8 +28,8 @@ s3 = boto3.resource('s3',
 import json
 import pandas as pd
 import boto3
-bucket = s3.Bucket('')
 import io
+bucket = s3.Bucket('')
 prefix_objs = bucket.objects.filter(Prefix = "") 
 
 # Read in accelerometer sensor data
