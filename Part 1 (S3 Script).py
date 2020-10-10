@@ -92,7 +92,7 @@ df_magneto = pd.DataFrame(columns = ['Altitude',
 for obj in prefix_objs:
     key = obj.key
     obje = client.get_object(Bucket = '', 
-                             Key=key)
+                             Key = key)
     data = obje['Body'].read().decode()
     json_content = json.loads(data)
     try:
