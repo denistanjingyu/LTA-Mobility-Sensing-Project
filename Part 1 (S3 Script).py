@@ -1,6 +1,6 @@
 # Part 1 MSP
 # Retrieve data from S3 bucket
-# Save to csv file
+# Save to CSV file
 import boto3
 
 _BUCKET_NAME = ''
