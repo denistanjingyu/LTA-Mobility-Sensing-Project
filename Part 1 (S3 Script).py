@@ -19,8 +19,8 @@ def ListFiles(client):
 
 file_list = ListFiles(client)
 for file in file_list:
-    print ('File found: %s' % file)
-    
+    print(f'File found: {file}')
+
 # Accessing s3 bucket data
 s3 = boto3.resource('s3', 
                     aws_access_key_id = '',
@@ -53,7 +53,7 @@ for obj in prefix_objs:
     except KeyError:
          pass
     df_accel = df_accel.append(dff)
-    
+
 df_accel.shape
 df_accel.head()
 df_accel.to_csv('accelerometer.csv', 
@@ -101,7 +101,7 @@ for obj in prefix_objs:
     except KeyError:
          pass
     df_magneto = df_magneto.append(dff)
-    
+
 df_magneto.shape
 df_magneto.head()
 df_magneto.to_csv('magnetometer.csv', 
