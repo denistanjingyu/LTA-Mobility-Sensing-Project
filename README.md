@@ -313,4 +313,4 @@ Location information about commuter activities is vital for planning for travel 
 ## Code and Resources Used
 - **Database:** AWS S3
 - **Packages:** json, io, boto3, pandas, numpy, matplotlib, seaborn, datetime, sklearn, math, scipy, catboost, lightgbm, imblearn, hyperopt, xgboost, vecstack 
-- Special thanks to **Guanlan** for Kalman Filter script
+- Special mention to **Guanlan** for Kalman Filter script
